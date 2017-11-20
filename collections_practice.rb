@@ -18,3 +18,20 @@ end
 def count_elements(array)
   array.uniq.each { |item| item[:count] = array.count(item)}
 end
+
+def merge_data(keys, data)
+  final = []
+  data.each { |item| item.map { |k,v| final << v } }
+  final.map.with_index { |item, idx| keys[idx].merge(item) }
+end
+
+def find_cool(array)
+  array.select { |item| item if item.values.include?("cool")}
+end
+
+def organize_schools(array)
+  hash = {}
+  array.values.each { |item| item.values.each { |location| hash[location] = []}}
+  array.map {|school, location| hash[location.values.last] << school}
+  hash
+end
