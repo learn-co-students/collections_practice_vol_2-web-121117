@@ -34,11 +34,18 @@ def remove_non_strings(array)
 end
 
 
-def count_elements(item, array)
-  count = 0
+def count_elements(array)
+  word_count = Hash.new 0
   array.each do |array_item|
-    if array_item == item
-      count += 1
-    end
+    word_count[array_item] += 1
   end
+  # return count
+  # new_array = [{:name =>"",
+  #             :count =>""}
+  new_array = []
+    word_count.each do |name_hash,count_value|
+      name_hash[:count] = count_value
+      new_array.push(name_hash)
+    end
+  return new_array
 end
