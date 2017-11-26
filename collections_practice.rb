@@ -35,5 +35,20 @@ def first_wa(array)
 end
 
 def remove_non_strings(array)
-  
+  array.each do |item|
+    if item.is_a?(String)
+      return_value = [array.delete(item)]
+    end
+        return return_value
+  end
 end
+
+#
+# def count_elements(item, array)
+#   count = 0
+#   array.each do |item|
+#     if item == item
+#       count += 1
+#     end
+#   end
+# end
