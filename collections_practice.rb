@@ -1,14 +1,4 @@
-# your code goes here
-# def begins_with_r(array)
-#   new_array = []
-#   array.each do |item|
-#     if item[0] != "r"
-#       return false
-#     elsif
-#       return true
-#     end
-#   end
-# end
+
 def begins_with_r(array)
   new_array = []
   array.each do |item|
