@@ -43,12 +43,12 @@ def remove_non_strings(array)
   end
 end
 
-#
-# def count_elements(item, array)
-#   count = 0
-#   array.each do |item|
-#     if item == item
-#       count += 1
-#     end
-#   end
-# end
+
+def count_elements(item, array)
+  count = 0
+  array.each do |array_item|
+    if array_item == item
+      count += 1
+    end
+  end
+end
