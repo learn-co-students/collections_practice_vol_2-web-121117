@@ -39,13 +39,23 @@ def count_elements(array)
   array.each do |array_item|
     word_count[array_item] += 1
   end
-  # return count
-  # new_array = [{:name =>"",
-  #             :count =>""}
+
   new_array = []
     word_count.each do |name_hash,count_value|
       name_hash[:count] = count_value
       new_array.push(name_hash)
     end
   return new_array
+end
+
+def merge_data(keys,data)
+
+end
+
+def find_cool(array)
+  array.each do |initial_hash, name_temp|
+    if initial_hash[:temperature] == "cool"
+      return [initial_hash]
+    end
+  end
 end
