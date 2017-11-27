@@ -59,3 +59,26 @@ def find_cool(array)
     end
   end
 end
+
+def organize_schools(hash)
+  return_hash = {}
+  nyc_array = []
+  sf_array = []
+  chicago_array = []
+  hash.each do |key,value|
+    if value[:location] == "NYC"
+      nyc_array<< key
+      elsif value[:location] == "SF"
+      sf_array<< key
+      elsif value[:location] == "Chicago"
+      chicago_array<< key
+  end
+  end
+  puts nyc_array
+  puts sf_array
+  puts chicago_array
+  return_hash["NYC"] = nyc_array
+  return_hash["SF"] = sf_array
+  return_hash["Chicago"] = chicago_array
+  return return_hash
+end
