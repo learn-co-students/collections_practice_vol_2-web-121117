@@ -31,16 +31,16 @@ end
 string
 end
 
-#arr.group_by(&:itself).map{|k, v| k.merge(count: v.length)}
+##
 def count_elements(arr)
-arr.group_by(&:itself).map{|k, v| k.merge(count: v.length)}
+arr.uniq.each do |word|
+  word[:count] = arr.count(word)
+  end
 end
 
 def merge_data(keys, data)
-keys.each do |name_hash|
-  data.each do |data_hash|
-    name_hash.merge!(data_hash[name_hash[:first_name]])
-  end
+keys.collect do |key|
+  key.merge(data[0][key[:first_name]])
 end
 end
 
@@ -58,11 +58,13 @@ def organize_schools(arr)
 hashtastic = {}
 arr.each do |school_string, location_hash|
   location_hash.each do |location_symbol, location_string|
-    if hashtastic[location_string] == nil
-      hashtastic[location_string] = [school_string]
-    else
-      hashtastic[location_string] << school_string
-    end
+    hashtastic[location_string] ||= []
+    hashtastic[location_string] << school_string
+    # if hashtastic[location_string] == nil
+    #   hashtastic[location_string] = [school_string]
+    # else
+    #   hashtastic[location_string] << school_string
+    # end
   end
 end
 hashtastic
